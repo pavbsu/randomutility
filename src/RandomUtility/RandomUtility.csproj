@@ -21,7 +21,7 @@
     <!-- NuGet packaging -->
     <PackageId>RandomUtility</PackageId>
     <Authors>RandomUtility contributors</Authors>
-    <Description>An utility to create random objects</Description>
+    <Description>A set of helper methods to generate pseudo-random objects by using System.Random</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/pavbsu/randomutility</RepositoryUrl>

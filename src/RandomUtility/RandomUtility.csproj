@@ -8,4 +8,10 @@
     <PackageReference Update="NETStandard.Library" PrivateAssets="all" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <!-- Assembly signing -->
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\RandomUtility.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
 </Project>

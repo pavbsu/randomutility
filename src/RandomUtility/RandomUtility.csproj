@@ -4,14 +4,50 @@
     <TargetFramework>netstandard1.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Update="NETStandard.Library" PrivateAssets="all" />
-  </ItemGroup>
+  <PropertyGroup>
+    <!-- Versions -->
+    <Version>0.0.0</Version>
+    <AssemblyVersion>$(Version.Split('.')[0]).0.0.0</AssemblyVersion>
+    <FileVersion>$(Version)</FileVersion>
+  </PropertyGroup>
 
   <PropertyGroup>
     <!-- Assembly signing -->
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\RandomUtility.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- NuGet packaging -->
+    <PackageId>RandomUtility</PackageId>
+    <Authors>RandomUtility contributors</Authors>
+    <Description>An utility to create random objects</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/pavbsu/randomutility</RepositoryUrl>
+    <PackageTags>random randomize randomizer utility utilities generator help helper rng object</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EnablePackageValidation>true</EnablePackageValidation>
+    <!-- Source Link -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <!-- Deterministic Builds -->
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" Visible="False" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="NETStandard.Library" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+  </ItemGroup>
 
 </Project>

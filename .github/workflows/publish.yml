@@ -48,7 +48,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.ref }}
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         with:
           path: ${{ env.ARTIFACTS_FOLDER }}
       - run: ls -R
@@ -74,7 +74,7 @@ jobs:
     env:
       ARTIFACTS_FOLDER: ${{ github.workspace }}/artifacts
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4.1.7
         with:
           path: ${{ env.ARTIFACTS_FOLDER }}
       - run: echo "ARTIFACT_NAME=$(basename $(ls $ARTIFACTS_FOLDER/**/*.nupkg) .nupkg)" >> $GITHUB_ENV
